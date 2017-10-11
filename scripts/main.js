@@ -34,6 +34,8 @@ function outputNumbers(howMany) {
     let textBox1 = document.getElementById("text01");
     textBox1.value = "";
 
+    // for looping structure...
+    //  initialize    test      increment
     for (let i = 0; i < howMany; i += 1) {
         textBox1.value = textBox1.value + i + '\n';
     }
@@ -56,8 +58,12 @@ function textAreaExample2() {
     //textBox1.value = "";    // clear the text box, not needed
     let inputBox1 = document.getElementById("stuff");
     let inputText = inputBox1.value;
+    // assign the current value, the line break, and the new value
     textBox1.value = inputText + '\n' + textBox1.value;
+    // Optional example below, comment out to disable
+    // example of splitting a string on a specific character
     let names = textBox1.value.split("\n");
+    // assign the resulting array to the text box
     textBox1.value = names;
 }
 
