@@ -7,7 +7,7 @@
           HTML elements is EXTERNAL input and output.
 */
 
-// Output numbers to a text area
+// Cube the number input and return it
 //   Parameters:
 //      Input: How many numbers to output
 //      Output: The result of input^3
@@ -27,8 +27,8 @@ function testCube() {
     alert(result);
 }
 
-// Print the numbers from 0..howmany to text area
-// Input: How many number to print
+// Print the numbers from 0..howmany to a text area
+// Input: How many numbers to print
 // Output: none
 function outputNumbers(howMany) {
     let textBox1 = document.getElementById("text01");
