@@ -1,26 +1,35 @@
 /*
     Peter Casey
-    v 0.0001
-    10/3/17
+    v 0.002
+    
+    NOTE: The Input: and Output: elements are INTERNAL inputs
+          and outputs. Input from HTML elements and output to
+          HTML elements is EXTERNAL input and output.
 */
 
-<<<<<<< HEAD
 // Output numbers to a text area
 //   Parameters:
 //      Input: How many numbers to output
-//      Output: The result of n^3
+//      Output: The result of input^3
 function cube(inputNumber) {
     let outputValue;
     outputValue = inputNumber * inputNumber * inputNumber;
     return outputValue;
 }
 
+// Test the cube() function, pass it a number
+//   and alert the result.  3 --> 27
+// Input: none
+// Output: none
 function testCube() {
     let numToCube = 3;
     let result = cube(numToCube);
     alert(result);
 }
 
+// Print the numbers from 0..howmany to text area
+// Input: How many number to print
+// Output: none
 function outputNumbers(howMany) {
     let textBox1 = document.getElementById("text01");
     textBox1.value = "";
@@ -30,38 +39,31 @@ function outputNumbers(howMany) {
     }
 }
 
+// Call the outputNumbers() function
+// Input: none
+// Output: none
 function textAreaExample() {
     outputNumbers(100);
 }
 
+// Demonstrate working with a text area and an input box
+//   Get the two HTML elements
+//   Add the text from the input box to the text box
+// Input: none
+// Output: none
 function textAreaExample2() {
     let textBox1 = document.getElementById("text01");
-    //textBox1.value = "";
+    //textBox1.value = "";    // clear the text box, not needed
     let inputBox1 = document.getElementById("stuff");
     let inputText = inputBox1.value;
     textBox1.value = inputText + '\n' + textBox1.value;
     let names = textBox1.value.split("\n");
     textBox1.value = names;
-=======
-// Convience function to get HTML element
-function getE(id) {
-    return document.getElementById(id);
 }
 
-function getEleText(id) {
-    return document.getElementById(id).value;
->>>>>>> c44df055b2f3f35c4a8125e7114fc4051e413635
-}
-
-// Simple function to test our setup
-function test() {
-<<<<<<< HEAD
-    
-=======
-    alert("Testing getEleText(): " + getEleText("stuff"));
->>>>>>> c44df055b2f3f35c4a8125e7114fc4051e413635
-}
-
+// Demonstrate reading/writing with input boxes
+// Input: none
+// Output: none
 function readText() {
     // Grab the input element from the document
     let inputItem;
@@ -70,9 +72,10 @@ function readText() {
     let theText = inputItem.value;
     // Demonstrate...
     alert("value is " + theText);
+    // Convert the text to uppercase
     let theTextUpper = theText.toUpperCase();
- //   inputItem.value = theTextUpper;
     // Grab the output element from the document
-    let outputItem = document.getElementById("stuff2");
+    let outputItem = document.getElementById("stuff2");ou
+    // Put the text into the output input box
     outputItem.value = theTextUpper;        
 }
