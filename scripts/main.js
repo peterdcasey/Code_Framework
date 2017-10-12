@@ -9,7 +9,7 @@
 
 // Cube the number input and return it
 //   Parameters:
-//      Input: How many numbers to output
+//      Input: The number to cube
 //      Output: The result of input^3
 function cube(inputNumber) {
     let outputValue;
@@ -27,25 +27,50 @@ function testCube() {
     alert(result);
 }
 
+// Create a list of numbers
+// Input: How many numbers
+//        Where to start the number string
+//        What separates the values
+// Output: A string of the numbers separated
+//         by line breaks '\n'
+function createNumberString(startNumber, howMany, separator) {
+    if (!separator) { // default to \n
+        separator = '\n';    
+    }
+    let result = "";
+    let loopCounter = startNumber;
+    let maxNumber = startNumber + howMany;
+
+    while (loopCounter < maxNumber) {
+        result = result + String(loopCounter) + separator;
+        ++loopCounter;   // add one to loopCounter                            
+    }
+
+    return result;
+}
+
 // Print the numbers from 0..howmany to a text area
 // Input: How many numbers to print
 // Output: none
 function outputNumbers(howMany) {
     let textBox1 = document.getElementById("text01");
-    textBox1.value = "";
+    textBox1.value = ""; // clear the text box
 
     // for looping structure...
     //  initialize    test      increment
+    /*
     for (let i = 0; i < howMany; i += 1) {
         textBox1.value = textBox1.value + i + '\n';
     }
+    */
+    textBox1.value = createNumberString(-1, howMany, '---');
 }
 
 // Call the outputNumbers() function
 // Input: none
 // Output: none
 function textAreaExample() {
-    outputNumbers(100);
+    outputNumbers(10);
 }
 
 // Demonstrate working with a text area and an input box
