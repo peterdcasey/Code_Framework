@@ -87,9 +87,9 @@ function textAreaExample2() {
     textBox1.value = inputText + '\n' + textBox1.value;
     // Optional example below, comment out to disable
     // example of splitting a string on a specific character
-    let names = textBox1.value.split("\n");
+    //let names = textBox1.value.split("\n");
     // assign the resulting array to the text box
-    textBox1.value = names;
+    //textBox1.value = names;
 }
 
 // Demonstrate reading/writing with input boxes
