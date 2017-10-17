@@ -22,6 +22,7 @@ function cube(inputNumber) {
 // Input: none
 // Output: none
 function testCube() {
+    console.log(hello);
     let numToCube = 3;
     let result = cube(numToCube);
     alert(result);
@@ -66,11 +67,75 @@ function outputNumbers(howMany) {
     textBox1.value = createNumberString(-1, howMany, '---');
 }
 
+// Clear textarea "text01"
+function clrTxt() {
+    let textArea = document.getElementById("text01"); 
+    textArea.value = '';
+}
+
+// Print(....)
+// Prints the argument to textarea "text01"
+//   or to the element with value in ID.
+// NO LINE BREAK
+function print(str, id) {
+    if (id === undefined || id === null) {
+        id = "text01";
+    }
+    let textArea = getEle(id);
+    textArea.value = textArea.value + str;
+}
+
+// Print(....)
+// Prints the argument to textarea "text01"
+//   or to the element with the value in ID
+// YES LINE BREAK
+function println(str, id) {
+    // (!undefined)
+    //if (!str) {
+    if (str === undefined || str === null) {  // was a value passed?
+        str = '';
+    }
+    print(String(str) + '\n', id);
+}
+
+function testPrint() {
+    clrTxt();
+    let txt = getEleText("stuff");
+
+    print("testing 1 2 3", "stuff2");
+    println(txt);
+    print("Hello world");
+    println(", have a nice day.");
+    println();
+    println("See you later");
+    println("yes indeed", "text02");
+    println(" it workded!!!!!", "text02");
+    let x = [1,2,2,3,4,4,5];
+    println(x);
+    println();
+    //print(x);
+    for (let i = 0; i < x.length; i += 1) {
+        println(i + "  " + x[i]);
+    }
+}
+
 // Call the outputNumbers() function
 // Input: none
 // Output: none
 function textAreaExample() {
     outputNumbers(10);
+}
+
+// Get an HTML element from the document
+//   by using the element ID property
+function getEle(id) {
+    return document.getElementById(id);  
+}
+
+// Get the text (the value property) for an 
+//   input box or a textarea given the HTML ID
+function getEleText(id) {
+    return getEle(id).value;
 }
 
 // Demonstrate working with a text area and an input box
@@ -82,6 +147,7 @@ function textAreaExample2() {
     let textBox1 = document.getElementById("text01");
     //textBox1.value = "";    // clear the text box, not needed
     let inputBox1 = document.getElementById("stuff");
+    //alert(inputBox1);
     let inputText = inputBox1.value;
     // assign the current value, the line break, and the new value
     textBox1.value = inputText + '\n' + textBox1.value;
